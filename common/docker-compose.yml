@@ -6,7 +6,7 @@ networks:
 services:
   nginx:
     build:
-      context: ../mysite
+      context: ../nginx
     container_name: nginx
     ports:
       - "8080:80"
@@ -34,8 +34,7 @@ services:
 
   php:
     build:
-      context: .
-      dockerfile: php.dockerfile
+      context: ../php
     container_name: php
     volumes:
       - ./src:/var/www/html:delegated
@@ -46,8 +45,7 @@ services:
 
   composer:
     build:
-      context: .
-      dockerfile: composer.dockerfile
+      context: ../composer
     container_name: composer
     volumes:
       - ./src:/var/www/html
@@ -69,8 +67,7 @@ services:
 
   artisan:
     build:
-      context: .
-      dockerfile: php.dockerfile
+      context: ../php
     container_name: artisan
     volumes:
       - ./src:/var/www/html:delegated
