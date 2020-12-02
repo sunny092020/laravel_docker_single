@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:fpm-alpine
 
 ADD www.conf /usr/local/etc/php-fpm.d/www.conf
 
@@ -10,4 +10,4 @@ RUN chown laravel:laravel /var/www/html
 
 WORKDIR /var/www/html
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo

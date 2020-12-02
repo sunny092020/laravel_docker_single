@@ -58,7 +58,7 @@ services:
     entrypoint: ['composer', '--ignore-platform-reqs']
 
   npm:
-    image: node:13.7
+    image: node:alpine
     container_name: npm
     volumes:
       - ./src:/var/www/html
